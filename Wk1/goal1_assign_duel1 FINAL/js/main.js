@@ -42,33 +42,41 @@ ANALYZE Duel #1
             //random formula is - Math.floor(Math.random() * (max - min) + min);
             var minDamage1 = player1Damage * .5;
             var minDamage2 = player2Damage * .5;
+//Variable for minimum play damage which is max damage * .5
             var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
             var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
+//Variable that will generate a random amount of damage.
 
             //inflict damage
             playerOneHealth-=f1;
             playerTwoHealth-=f2;
-
+//Applies to random amount of damage to each player.
             console.log(playerOneName+": "+playerOneHealth + " " + playerTwoName+":"+playerTwoHealth);
-
+//Logs the result of the damage done to each player in the console.
             //check for victor
             var result = winnerCheck();
+//Variable that will check to see if there is a winner.
             console.log(result);
+//Logs winner in the console.
             if (result==="no winner")
+//If the result is strictly equal to "no winner" then continue loop.
             {
                 round++;
                 alert(playerOneName+":"+playerOneHealth+"  *ROUND "+round+" OVER"+"*  "+playerTwoName+":"+playerTwoHealth);
-
+//If there is no winner, alert the user of each player's health and current round.
             } else{
                 alert(result);
                 break;
+//If there is a winner alert the user of the result (who the winning player is).
             };
 
           };
     };
 
     function winnerCheck(){
+//Stores the winnerCheck variable.
         var result="no winner";
+//Sets up the result variable.
         if (playerOneHealth<1 && playerTwoHealth<1)
         {
             result = "You Both Die";
