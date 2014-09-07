@@ -20,21 +20,24 @@ ANALYZE Duel #1
     //player name
     var playerOneName = "Spiderman";
     var playerTwoName = "Batman";
-
+//Creates a name variable for players one and two.
     //player damage
     var player1Damage = 20;
     var player2Damage = 20;
-
+//Creates a maximum damage variable for players one and two.
     //player health
     var playerOneHealth = 100;
     var playerTwoHealth = 100;
-
+//Creates a total health variable for players one and two
     //initiate round
     var round=0;
-
+//Creates a variable for the round number, which starts at 0.
     function fight(){
+//Start of the "fight" function which will damage both player's health each round.
         alert(playerOneName+":"+playerOneHealth+"  *START*  "+playerTwoName+":"+playerTwoHealth);
+//Alerts the user of both players starting health.
         for (var i = 0; i < 10; i++)
+//Start of the for loop which first sets up a round counter, starting at 0 then increasing by 1 until it reaches 10.
         {
             //random formula is - Math.floor(Math.random() * (max - min) + min);
             var minDamage1 = player1Damage * .5;
