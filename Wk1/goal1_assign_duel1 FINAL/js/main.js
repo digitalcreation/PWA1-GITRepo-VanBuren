@@ -22,8 +22,8 @@ ANALYZE Duel #1
     var playerTwoName = "Batman";
 //Creates a name variable for players one and two.
     //player damage
-    var player1Damage = 20;
-    var player2Damage = 20;
+    var player1Damage = 50;
+    var player2Damage = 50;
 //Creates a maximum damage variable for players one and two.
     //player health
     var playerOneHealth = 100;
