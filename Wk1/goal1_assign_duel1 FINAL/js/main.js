@@ -37,7 +37,7 @@ ANALYZE Duel #1
         alert(playerOneName+":"+playerOneHealth+"  *START*  "+playerTwoName+":"+playerTwoHealth);
 //Alerts the user of both players starting health.
         for (var i = 0; i < 10; i++)
-//Start of the for loop which first sets up a round counter, starting at 0 then increasing by 1 until it reaches 10.
+//Start of the for loop which first sets up a round counter, starting at 0 then increasing by 1 until it reaches 10 or there is a winner.
         {
             //random formula is - Math.floor(Math.random() * (max - min) + min);
             var minDamage1 = player1Damage * .5;
@@ -67,7 +67,7 @@ ANALYZE Duel #1
             } else{
                 alert(result);
                 break;
-//If there is a winner alert the user of the result (who the winning player is).
+//If there is a winner alert the user of the result (who the winning player is) and stop the loop.
             };
 
           };
