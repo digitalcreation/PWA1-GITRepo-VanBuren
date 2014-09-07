@@ -80,13 +80,17 @@ ANALYZE Duel #1
         if (playerOneHealth<1 && playerTwoHealth<1)
         {
             result = "You Both Die";
+//If the both players health drops below 1 then the result equals "You Both Die"
         } else if(playerOneHealth<1){
             result =playerTwoName+" WINS!!!"
+//Otherwise, if player one's health is below 1 then the result is player two wins.
         } else if (playerTwoHealth<1)
         {
             result = playerOneName+" WINS!!!"
+//Otherwise, if player two's health is below 1 then the result is player one wins.
         };
        return result;
+//Returns the value of the result.
     };
 
     /*******  The program gets started below *******/
