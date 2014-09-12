@@ -6,9 +6,10 @@ Debugging Assignment Version 1.0 (Week 1)
 
 // Create privatized scope using a self-executing function
 (function(){
-	
+//Self-executing function.
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
 	var resultsDIV = document.getElementById("results"),
+    //variable that is used for accessing form elements.
 		searchInput = document.forms[0].search,
 		currentSearch = ''
 	;
