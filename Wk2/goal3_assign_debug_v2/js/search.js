@@ -11,20 +11,17 @@ DEBUG Search v2
     searchInput = document.forms[0].search,
     currentSearch = ''
 ;
-console.log(resultsDIV);
+console.log(1);
 // Validates search query
-var validate = function (query) {
+    var validate = function (query) {
 
-    // Trim whitespace from start and end of search query
-    while (query.charAt(0) === " ") {
-        query = query.substring(1, query.length);
-    }
-    ;
-    while (query.charAt(query.length - 1) === "") {
-        query = query.substring(0, query.length - 1);
-    }
-    ;
-    console.log(2);
+        // Trim whitespace from start and end of search query
+        while (query.charAt(0) === " ") {
+            query = query.substring(1, query.length);
+         }
+        while (query.charAt(query.length - 1) === " ") {
+            query = query.substring(0, query.length - 1);
+        }
     // Check search length, must have 3 characters
     if (query.length < 3) {
         alert("Your search query is too small, try again.");
@@ -33,27 +30,25 @@ var validate = function (query) {
         searchInput.focus();
         return;
     }
-    ;
     console.log(3);
     search(query);
 };
 console.log(4);
 // Finds search matches
-var search = function (query) {
+    var search = function (query) {
 
-    // split the user's search query string into an array
-    var queryArray = query.join(" ");
+        // split the user's search query string into an array
+        var queryArray = query.join(" ");
 
-    // array to store matched results from database.js
-    var results = [];
+        // array to store matched results from database.js
+        var results = [];
 
-    // loop through each index of db array
-    for (var i = 0, j = db.length; i < j; i++) {
-
-        // each db[i] is a single video item, each title ends with a pipe "|"
-        // save a lowercase variable of the video title
-        var dbTitleEnd = db[i].indexOf('|');
-        var dbItem = db[i].toLowerCase().substring(0, dbTitleEnd);
+        // loop through each index of db array
+        for (var i = 0, j = db.length; i < j; i++) {
+            // each db[i] is a single video item, each title ends with a pipe "|"
+            // save a lowercase variable of the video title
+            var dbTitleEnd = db[i].indexOf('|');
+            var dbItem = db[i].toLowerCase().substring(0, dbTitleEnd);
 
         // loop through the user's search query words
         // save a lowercase variable of the search keyword
