@@ -5,6 +5,7 @@ DEBUG Search v3 (Final)
  */
 
 // Create privatized scope using a self-executing function
+//Start of self-extracting function.
 (function(){
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
@@ -14,6 +15,7 @@ DEBUG Search v3 (Final)
 	;
 	
 	// Validates search query
+    //variable that will validate that the user entered in more than 2 characters, otherwise they receive an alert.
 	var validate = function(query){
 		
 		// Trim whitespace from start and end of search query
@@ -37,6 +39,7 @@ DEBUG Search v3 (Final)
 	};
 	
 	// Finds search matches
+    //Search function that pulls information from the database file.
 	var search = function(query){
 		
 		// split the user's search query string into an array
@@ -70,6 +73,7 @@ DEBUG Search v3 (Final)
 		results.sort();
 		
 		// Check that matches were found, and run output functions
+        //Checks to see if matches were found, if there are it will show the results, if not it shows the "noMatch" to the user.
 		if(results.length === 0){
 			noMatch();
 		}else{
@@ -78,6 +82,7 @@ DEBUG Search v3 (Final)
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
+    //This will be used to show the user if there is no match for their search term.
 	var noMatch = function(){
 		var html = ''+
 			'<p>No Results found.</p>'+
@@ -87,6 +92,7 @@ DEBUG Search v3 (Final)
 	};
 	
 	// Put matches into page as paragraphs with anchors
+    //This will be used to show the user the results, if there are any.
 	var showMatches = function(results){
 		
 		// THE NEXT 4 LINES ARE CORRECT.
