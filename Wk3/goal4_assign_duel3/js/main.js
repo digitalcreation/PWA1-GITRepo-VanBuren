@@ -101,8 +101,6 @@ console.log("FIGHT!!!");
     function winnerCheck(){
         //Variable that sets the result = to "no winner".
         var result = "no winner";
-
-
         if
             (players[0].health <1 && players[1].health < 1)
         {
