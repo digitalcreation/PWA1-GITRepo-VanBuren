@@ -14,9 +14,9 @@ Duel #3
 
 // self-executing function
 (function(){
-//Start of function
-    //console.log("FIGHT!!!");
-    //Logs the string "FIGHT!!!" in the console
+//Logs the string "FIGHT!!!" in the console
+console.log("FIGHT!!!");
+
 
     //Setup variable for players 1&2 that will show name and health on the page.
     var player1_txt = document.querySelector("#kabal").querySelector("p");
