@@ -15,25 +15,15 @@ DEVELOP Duel #3
 // self-executing function
 (function(){
 //Start of function
-    console.log("FIGHT!!!");
+    //console.log("FIGHT!!!");
     //Logs the string "FIGHT!!!" in the console
 
-    var player1_txt = document.getElementById("kabal");
-    var player2_txt = document.getElementById("kratos");
-    var round_txt = document.getElementById("h5");
+    var player1_txt = document.querySelector("#kabal").querySelector("p");
+    var player2_txt = document.querySelector("#kratos").querySelector("p");
+    var round_txt = document.querySelector("#round_number");
     var button = document.getElementById("fight_btn");
-    //Creates an array for player1 that contains: 1) Player Name, 2) Player's Damage, 3)Players Health
-    /*var player1 = [
-        "Spiderman",
-        20,
-        100
-    ];
-    //Creates an array for player2 that contains: 1) Player Name, 2) Player's Damage, 3)Players Health
-    var player2 = [
-        "Batman",
-        20,
-        100
-    ];*/
+
+    button.addEventListener("click", fight, false);
 
     var players = [
         {
@@ -47,9 +37,9 @@ DEVELOP Duel #3
             health:100
         }];
     //Creates a variable for the round number, which starts at 1.
-    var round=1;
+    var round = 1;
 
-    round_txt.innerHTML = "Click Fight Button to Start!";
+    round_txt.innerHTML = "Click FIGHT BUTTON to Start!";
     player1_txt.innerHTML = players[0].name + ":" + players[0].health;
     player2_txt.innerHTMl = players[1].name + ":" + players[1].health;
 
@@ -62,12 +52,12 @@ DEVELOP Duel #3
 
 
             //Variable that will generate a random amount of damage.
-            var p1 = Math.floor(Math.random() * players[0].damage + players [0].damage *5);
-            var p2 = Math.floor(Math.random() * players[1].damage + players [1].damage *5);
+            var p1 = Math.floor(Math.random() * players[0].damage + players [0].damage * .5);
+            var p2 = Math.floor(Math.random() * players[1].damage + players [1].damage * .5);
 
             //inflict damage
-            players[0] -= p1;
-            players[1] -= p2;
+            players[0].health -= p1;
+            players[1].health -= p2;
 
             //Logs the result of the damage done to each player in the console.
             console.log(players[0].health, players[1].health);
@@ -88,7 +78,9 @@ DEVELOP Duel #3
                 player1_txt.innerHTML = result;
                 player2_txt.innerHTML = "";
 
-                document.getElementById(".buttonblue").innerHTML = "DONE!!!";
+                button.removeEventListener("click", fight, false);
+
+                document.querySelector(".buttonblue").innerHTML = "DONE!!!";
             };
 
 
@@ -101,20 +93,17 @@ DEVELOP Duel #3
         if (players[0].health <1 && players[1].health < 1)
         {
             //If the both players health drops below 1 then the result equals "You Both Die"
-            result = "You Both Die";
-        } else if(player1[2]<1){
-            //Otherwise, if player one's health is below 1 then the result is player two wins.
-            result =player2[0]+" WINS!!!"
-        } else if (player2[2]<1)
+            result = "You Both Die - GAME OVER!";
+        } else if
+            (players[0].health < 1){
+            result = players[1].name + " WINS!!!"
+        } else if
+            (players[1].health < 1)
         {
-            result = player[0]+" WINS!!!"
-        //Otherwise, if player two's health is below 1 then the result is player one wins.
-        };
-       return result;
-       //Returns the value of the result.
-    };
-
-    /*******  The program gets started below *******/
-    fight();
+            result = players[0].name + " WINS!!!"
+        }
+        //Returns the value of the result.
+        return result;
+    }
 
 })();
