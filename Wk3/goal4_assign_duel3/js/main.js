@@ -18,12 +18,12 @@ DEVELOP Duel #3
     //console.log("FIGHT!!!");
     //Logs the string "FIGHT!!!" in the console
 
-    //Setups variable for players 1&2 that will show name and health on the page.
+    //Setup variable for players 1&2 that will show name and health on the page.
     var player1_txt = document.querySelector("#kabal").querySelector("p");
     var player2_txt = document.querySelector("#kratos").querySelector("p");
     //Setups variable for the current round on the page.
     var round_txt = document.querySelector("#round_number");
-    //Setups variable for the fight button on the page.
+    //Setup variable for the fight button on the page.
     var button = document.getElementById("fight_btn");
 
     //sets up click event
@@ -91,28 +91,32 @@ DEVELOP Duel #3
 
                 //Disable the button.
                 button.removeEventListener("click", fight, false);
-
+                //Prints "DONE!!!" in the fight button.
                 document.querySelector(".buttonblue").innerHTML = "DONE!!!";
             };
 
     };
 
+    //Setup winnerCheck function.
     function winnerCheck(){
-    //Stores the winnerCheck variable.
-        var result="no winner";
-        //Sets up the result variable.
-        if (players[0].health <1 && players[1].health < 1)
+        //Variable that sets the result = to "no winner".
+        var result = "no winner";
+
+
+        if
+            (players[0].health <1 && players[1].health < 1)
         {
-            //If the both players health drops below 1 then the result equals "You Both Die"
+            //If the players1&2 health is <1 then result = "You Both Die - GAME OVER!".
             result = "You Both Die - GAME OVER!";
         } else if
+            //Otherwise if, player1 health is <1 then result = player 2 wins.
             (players[0].health < 1){
             result = players[1].name + " WINS!!!"
         } else if
+            //Otherwise if, player2 health is <1 then result = player 1 wins.
             (players[1].health < 1)
-        {
-            result = players[0].name + " WINS!!!"
-        }
+            result = players[0].name + " WINS!!!";
+
         //Returns the value of the result.
         return result;
     }
