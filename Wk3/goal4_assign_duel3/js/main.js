@@ -1,7 +1,7 @@
 /*
 Kevin Van Buren
 09/19/2014
-DEVELOP Duel #3
+Duel #3
 */
 
 /**
